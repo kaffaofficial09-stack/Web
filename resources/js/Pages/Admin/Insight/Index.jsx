@@ -17,7 +17,7 @@ export default function InsightIndex({ insights }) {
                     <h2 className="text-2xl font-bold text-gray-800">Insight</h2>
                     <p className="text-gray-500 text-sm">Kelola artikel dan wawasan pendidikan</p>
                 </div>
-                <Link href="/admin/insights/create" className="px-4 py-2 bg-[#1A3C34] text-white text-sm font-medium rounded-lg hover:bg-[#15322b] transition-colors">
+                <Link href="/admin/insights/create" className="px-4 py-2 bg-primary text-white text-sm font-medium rounded-lg hover:bg-[#15322b] transition-colors">
                     + Tambah Insight
                 </Link>
             </div>

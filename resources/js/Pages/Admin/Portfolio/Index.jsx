@@ -17,7 +17,7 @@ export default function PortfolioIndex({ portfolios }) {
                     <h2 className="text-2xl font-bold text-gray-800">Portofolio</h2>
                     <p className="text-gray-500 text-sm">Kelola dokumentasi kegiatan</p>
                 </div>
-                <Link href="/admin/portfolios/create" className="px-4 py-2 bg-[#F05A28] text-white text-sm font-medium rounded-lg hover:bg-[#d94d20] transition-colors">
+                <Link href="/admin/portfolios/create" className="px-4 py-2 bg-accent text-white text-sm font-medium rounded-lg hover:bg-[#d94d20] transition-colors">
                     + Tambah Portofolio
                 </Link>
             </div>
