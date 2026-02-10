@@ -11,6 +11,7 @@
         { "src": "/img/(.*)", "dest": "/public/img/$1" },
         { "src": "/favicon.ico", "dest": "/public/favicon.ico" },
         { "src": "/robots.txt", "dest": "/public/robots.txt" },
+        { "src": "/logo.jpg", "dest": "/public/logo.jpg" },
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
     "env": {
@@ -25,6 +26,7 @@
         "VIEW_COMPILED_PATH": "/tmp",
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie"
+        "SESSION_DRIVER": "cookie",
+        "QUEUE_CONNECTION": "sync"
     }
 }
