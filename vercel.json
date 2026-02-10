@@ -23,9 +23,5 @@
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie"
-    },
-    "exclude": [
-        "storage/app/public/insights/*",
-        "storage/app/public/portfolios/*"
-    ]
+    }
 }
