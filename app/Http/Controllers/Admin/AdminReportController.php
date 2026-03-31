@@ -11,10 +11,12 @@ class AdminReportController extends Controller
 {
     public function index(Request $request)
     {
-        $filter = $request->get('filter', 'all'); // all, hutang, lunas
-        $month = $request->get('month', now()->format('Y-m')); // YYYY-MM
+        $filter = $request->get('filter', 'all');
+        $month = $request->get('month', now()->format('Y-m'));
 
-        $query = Order::with('items', 'payments')->latest();
+        $query = Order::withCount('payments')
+            ->withSum('payments', 'amount')
+            ->latest();
 
         // Filter by month
         if ($month) {
@@ -29,13 +31,19 @@ class AdminReportController extends Controller
             $query->where('payment_status', 'lunas');
         }
 
-        $orders = $query->get();
+        // Select only needed columns
+        $orders = $query->select([
+            'id', 'invoice_number', 'customer_name', 'institution',
+            'grand_total', 'status', 'payment_status', 'created_at',
+            'discount_percent', 'shipping_cost'
+        ])->get();
 
-        $summary = [
-            'total' => Order::count(),
-            'hutang' => Order::where('payment_status', 'hutang')->count(),
-            'lunas' => Order::where('payment_status', 'lunas')->count(),
-        ];
+        // Single query for summary counts
+        $summary = Order::selectRaw("
+            COUNT(*) as total,
+            COUNT(CASE WHEN payment_status = 'hutang' THEN 1 END) as hutang,
+            COUNT(CASE WHEN payment_status = 'lunas' THEN 1 END) as lunas
+        ")->first();
 
         return Inertia::render('Admin/Report/Index', [
             'orders' => $orders,

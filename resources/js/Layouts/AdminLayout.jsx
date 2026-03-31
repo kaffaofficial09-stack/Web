@@ -17,7 +17,7 @@ export default function AdminLayout({ children }) {
         },
         {
             href: '/admin/insights', label: 'Insight',
-            icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" /></svg>
+            icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" /></svg>
         },
         {
             href: '/admin/portfolios', label: 'Portofolio',
@@ -44,7 +44,7 @@ export default function AdminLayout({ children }) {
                 />
             )}
 
-            {/* Sidebar — static on desktop, fixed slide-in on mobile */}
+            {/* Sidebar */}
             <aside className={`
                 bg-gradient-to-b from-primary-dark to-primary text-white
                 w-64 shrink-0 flex flex-col
@@ -54,26 +54,29 @@ export default function AdminLayout({ children }) {
             `}>
                 {/* Logo */}
                 <div className="p-5 border-b border-white/10">
-                    <a href="/admin" className="flex items-center gap-3 no-underline text-white">
-                        <img src="/img/logo_new.png" alt="KEP" className="h-10 brightness-0 invert" />
+                    <Link href="/admin" prefetch="hover" className="flex items-center gap-3 no-underline text-white">
+                        <img src="/img/logo_new.png" alt="KEP" className="h-10 brightness-0 invert" loading="lazy" />
                         <span className="text-[11px] font-bold text-white/50 tracking-[2px] uppercase">Admin Panel</span>
-                    </a>
+                    </Link>
                 </div>
 
-                {/* Navigation */}
+                {/* Navigation — using Inertia Link for SPA navigation */}
                 <nav className="p-3 mt-2 space-y-1 flex-1">
                     {navItems.map((item) => (
-                        <a
+                        <Link
                             key={item.href}
                             href={item.href}
+                            prefetch="hover"
+                            cacheFor="15s"
                             className={`flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium no-underline transition-all duration-200 ${isActive(item.href)
                                 ? 'bg-white/15 text-white shadow-sm'
                                 : 'text-white/60 hover:bg-white/10 hover:text-white'
                                 }`}
+                            onClick={() => setSidebarOpen(false)}
                         >
                             <span className={isActive(item.href) ? 'text-accent' : 'text-white/50'}>{item.icon}</span>
                             {item.label}
-                        </a>
+                        </Link>
                     ))}
                 </nav>
 

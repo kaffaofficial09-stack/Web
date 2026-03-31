@@ -44,10 +44,17 @@ class AdminController extends Controller
 
     public function dashboard()
     {
+        $counts = \Illuminate\Support\Facades\DB::selectOne("
+            SELECT
+                (SELECT COUNT(*) FROM insights) as insight_count,
+                (SELECT COUNT(*) FROM portfolios) as portfolio_count,
+                (SELECT COUNT(*) FROM orders) as order_count
+        ");
+
         return Inertia::render('Admin/Dashboard', [
-            'insightCount' => \App\Models\Insight::count(),
-            'portfolioCount' => \App\Models\Portfolio::count(),
-            'orderCount' => \App\Models\Order::count(),
+            'insightCount' => $counts->insight_count,
+            'portfolioCount' => $counts->portfolio_count,
+            'orderCount' => $counts->order_count,
         ]);
     }
 }

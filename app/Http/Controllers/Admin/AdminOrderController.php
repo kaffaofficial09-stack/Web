@@ -22,16 +22,20 @@ class AdminOrderController extends Controller
             });
         }
 
-        $orders = $query->get();
+        // Only select fields needed for the list view (not all columns)
+        $orders = $query->select([
+            'id', 'invoice_number', 'customer_name', 'institution',
+            'grand_total', 'status', 'payment_status', 'created_at'
+        ])->get();
 
-        // Status summary counts
-        $statusCounts = [
-            'pending' => Order::where('status', 'pending')->count(),
-            'confirmed' => Order::where('status', 'confirmed')->count(),
-            'shipped' => Order::where('status', 'shipped')->count(),
-            'completed' => Order::where('status', 'completed')->count(),
-            'cancelled' => Order::where('status', 'cancelled')->count(),
-        ];
+        // Use a single optimized query for status counts
+        $statusCounts = Order::selectRaw("
+            COUNT(CASE WHEN status = 'pending' THEN 1 END) as pending,
+            COUNT(CASE WHEN status = 'confirmed' THEN 1 END) as confirmed,
+            COUNT(CASE WHEN status = 'shipped' THEN 1 END) as shipped,
+            COUNT(CASE WHEN status = 'completed' THEN 1 END) as completed,
+            COUNT(CASE WHEN status = 'cancelled' THEN 1 END) as cancelled
+        ")->first();
 
         return Inertia::render('Admin/Order/Index', [
             'orders' => $orders,
