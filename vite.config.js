@@ -12,6 +12,26 @@ export default defineConfig({
         react(),
         tailwindcss(),
     ],
+    build: {
+        // Split vendor chunks for better caching
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    'vendor-inertia': ['@inertiajs/react'],
+                },
+            },
+        },
+        // Increase chunk size warning (we're intentionally splitting)
+        chunkSizeWarningLimit: 200,
+        // Enable minification
+        minify: 'terser',
+        terserOptions: {
+            compress: {
+                drop_console: true,
+                drop_debugger: true,
+            },
+        },
+    },
     server: {
         watch: {
             ignored: ['**/storage/framework/views/**'],
