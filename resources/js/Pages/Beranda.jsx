@@ -122,8 +122,8 @@ export default function Beranda() {
             {/* ═══════════════════ HERO ═══════════════════ */}
             <section className="relative min-h-[85vh] flex items-center bg-gradient-to-br from-primary-dark via-primary to-primary-light overflow-hidden">
                 {/* Decorative orbs */}
-                <div className="absolute top-20 right-[10%] w-[500px] h-[500px] bg-accent/20 rounded-full blur-3xl animate-pulse-soft"></div>
-                <div className="absolute bottom-10 left-[5%] w-[300px] h-[300px] bg-white/10 rounded-full blur-3xl animate-pulse-soft stagger-3"></div>
+                <div className="absolute top-20 right-[10%] w-[500px] h-[500px] bg-accent/20 rounded-full blur-2xl opacity-40"></div>
+                <div className="absolute bottom-10 left-[5%] w-[300px] h-[300px] bg-white/10 rounded-full blur-2xl opacity-40"></div>
 
                 {/* Dot grid */}
                 <div className="absolute inset-0 opacity-[0.04]" style={{
@@ -154,6 +154,8 @@ export default function Beranda() {
                         <div className="flex flex-wrap gap-4 animate-fade-up stagger-3">
                             <Link
                                 href="/program-pelatihan"
+                                prefetch="hover"
+                                cacheFor="30s"
                                 className="inline-flex items-center gap-2 px-7 py-4 bg-accent text-white font-semibold rounded-full
                                            hover:bg-accent-hover hover:shadow-xl hover:shadow-accent/30 hover:-translate-y-0.5
                                            transition-all duration-300 text-base"
@@ -262,6 +264,8 @@ export default function Beranda() {
                                 <p className="text-gray-500 text-sm leading-relaxed mb-6">{item.desc}</p>
                                 <Link
                                     href={item.link}
+                                    prefetch="hover"
+                                    cacheFor="30s"
                                     className="inline-flex items-center gap-1.5 text-accent font-semibold text-sm hover:text-accent-hover transition-colors duration-300 group/link"
                                 >
                                     Pelajari
@@ -276,8 +280,8 @@ export default function Beranda() {
             {/* ═══════════════════ MITRA LEMBAGA ═══════════════════ */}
             <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-primary-dark via-primary to-primary-light text-white relative overflow-hidden">
                 {/* Decorative */}
-                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-white/5 rounded-full blur-3xl"></div>
+                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-2xl"></div>
+                <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-white/5 rounded-full blur-2xl"></div>
 
                 <div className="relative max-w-[1200px] mx-auto">
                     <div className="text-center mb-16">
@@ -337,7 +341,7 @@ export default function Beranda() {
             {/* ═══════════════════ CTA ═══════════════════ */}
             <section className="py-20 md:py-28 px-6 bg-warm-bg relative overflow-hidden">
                 {/* Decorative */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-3xl"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-2xl"></div>
 
                 <div className="relative max-w-[700px] mx-auto text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-5 text-balance">
@@ -349,6 +353,8 @@ export default function Beranda() {
                     <div className="flex flex-wrap justify-center gap-4">
                         <Link
                             href="/kontak"
+                            prefetch="hover"
+                            cacheFor="30s"
                             className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-primary-light text-white font-semibold rounded-full
                                        hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5
                                        transition-all duration-300 text-lg"

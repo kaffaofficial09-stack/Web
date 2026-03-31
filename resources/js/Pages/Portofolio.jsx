@@ -48,6 +48,7 @@ export default function Portofolio({ portfolios = [] }) {
                                     <img
                                         src={item.image || item.img}
                                         alt={item.title}
+                                        loading="lazy"
                                         className="h-[220px] w-full object-cover group-hover:scale-110 transition-transform duration-700"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -56,7 +57,7 @@ export default function Portofolio({ portfolios = [] }) {
                                     <h4 className="font-bold text-primary-dark text-lg mb-1">{item.title}</h4>
                                     <p className="text-sm text-gray-500 mb-3">{item.description || item.desc}</p>
                                     {item.id && (
-                                        <Link href={`/portofolio/${item.id}`} className="inline-flex items-center gap-1.5 text-accent font-semibold text-sm hover:gap-3 transition-all duration-300">
+                                        <Link href={`/portofolio/${item.id}`} prefetch="hover" cacheFor="30s" className="inline-flex items-center gap-1.5 text-accent font-semibold text-sm hover:gap-3 transition-all duration-300">
                                             Lihat Detail
                                             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
                                         </Link>

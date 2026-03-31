@@ -68,7 +68,7 @@ export default function BukuModul() {
                         {products.map((item) => (
                             <div key={item.id} className="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-500">
                                 <div className="bg-warm-bg h-[320px] flex items-center justify-center p-6 overflow-hidden">
-                                    <img src={item.image} alt={item.title} className="h-full w-auto object-contain rounded-lg shadow-md group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={item.image} alt={item.title} loading="lazy" className="h-full w-auto object-contain rounded-lg shadow-md group-hover:scale-105 transition-transform duration-500" />
                                 </div>
                                 <div className="p-6">
                                     <h3 className="text-lg font-bold text-primary-dark mb-1">{item.title}</h3>

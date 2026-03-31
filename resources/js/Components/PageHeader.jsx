@@ -5,8 +5,8 @@ export default function PageHeader({ title, subtitle }) {
         <section className="relative bg-gradient-to-br from-primary-dark via-primary to-primary-light text-white py-20 md:py-24 px-6 overflow-hidden">
             {/* Decorative elements */}
             <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
+                <div className="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full blur-2xl -translate-y-1/2 translate-x-1/3"></div>
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full blur-2xl translate-y-1/2 -translate-x-1/3"></div>
             </div>
             {/* Grid pattern */}
             <div className="absolute inset-0 opacity-5" style={{

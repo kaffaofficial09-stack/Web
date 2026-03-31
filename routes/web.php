@@ -37,6 +37,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('orders', AdminOrderController::class)->only(['index', 'show']);
     Route::patch('orders/{order}/status', [AdminOrderController::class, 'updateStatus'])->name('orders.status');
     Route::post('orders/{order}/payments', [AdminOrderController::class, 'storePayment'])->name('orders.payments');
+    Route::delete('payments/{payment}', [AdminOrderController::class, 'destroyPayment'])->name('payments.destroy');
     Route::get('invoice/{order:invoice_number}', [OrderController::class, 'show'])->name('invoice.show');
     Route::get('reports', [AdminReportController::class, 'index'])->name('reports.index');
 });

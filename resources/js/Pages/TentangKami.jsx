@@ -89,7 +89,7 @@ export default function TentangKami() {
 
             {/* Visi & Misi */}
             <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-primary-dark via-primary to-primary-light text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-3xl"></div>
+                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-2xl"></div>
                 <div className="relative max-w-[1200px] mx-auto">
                     <div className="text-center mb-16">
                         <span className="inline-block text-accent font-semibold text-sm uppercase tracking-widest mb-3">Filosofi</span>

@@ -219,7 +219,20 @@ export default function CartDrawer({ isOpen, onClose }) {
                                                     >
                                                         {item.qty <= 1 ? '🗑' : '−'}
                                                     </button>
-                                                    <span className="w-8 text-center text-sm font-semibold">{item.qty}</span>
+                                                    <input
+                                                        type="number"
+                                                        min="1"
+                                                        value={item.qty}
+                                                        onChange={(e) => {
+                                                            const val = parseInt(e.target.value, 10);
+                                                            if (!isNaN(val) && val >= 1) {
+                                                                updateQty(item.id, val);
+                                                            } else if (e.target.value === '') {
+                                                                updateQty(item.id, 1);
+                                                            }
+                                                        }}
+                                                        className="w-12 text-center text-sm font-semibold border border-gray-200 rounded-md py-0.5 focus:outline-none focus:ring-1 focus:ring-primary/30 focus:border-primary [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                                                    />
                                                     <button
                                                         onClick={() => updateQty(item.id, item.qty + 1)}
                                                         className="w-7 h-7 flex items-center justify-center rounded-md bg-white border border-gray-200 text-sm hover:bg-gray-100 cursor-pointer transition-colors"

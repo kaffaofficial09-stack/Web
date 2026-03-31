@@ -24,10 +24,10 @@ export default function Footer() {
                     <div>
                         <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Program</h4>
                         <ul className="space-y-3">
-                            <li><Link href="/program-pelatihan" className="text-white/60 hover:text-accent text-sm transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-accent/50 rounded-full group-hover:bg-accent transition-colors"></span>Standar Mutu Sekolah</Link></li>
-                            <li><Link href="/program-pelatihan" className="text-white/60 hover:text-accent text-sm transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-accent/50 rounded-full group-hover:bg-accent transition-colors"></span>Reformulasi Kurikulum</Link></li>
-                            <li><Link href="/program-pelatihan" className="text-white/60 hover:text-accent text-sm transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-accent/50 rounded-full group-hover:bg-accent transition-colors"></span>Program Matrikulasi</Link></li>
-                            <li><Link href="/buku-modul" className="text-white/60 hover:text-accent text-sm transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-accent/50 rounded-full group-hover:bg-accent transition-colors"></span>Modul Matrikulasi</Link></li>
+                            <li><Link href="/program-pelatihan" prefetch="hover" cacheFor="30s" className="text-white/60 hover:text-accent text-sm transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-accent/50 rounded-full group-hover:bg-accent transition-colors"></span>Standar Mutu Sekolah</Link></li>
+                            <li><Link href="/program-pelatihan" prefetch="hover" cacheFor="30s" className="text-white/60 hover:text-accent text-sm transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-accent/50 rounded-full group-hover:bg-accent transition-colors"></span>Reformulasi Kurikulum</Link></li>
+                            <li><Link href="/program-pelatihan" prefetch="hover" cacheFor="30s" className="text-white/60 hover:text-accent text-sm transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-accent/50 rounded-full group-hover:bg-accent transition-colors"></span>Program Matrikulasi</Link></li>
+                            <li><Link href="/buku-modul" prefetch="hover" cacheFor="30s" className="text-white/60 hover:text-accent text-sm transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-accent/50 rounded-full group-hover:bg-accent transition-colors"></span>Modul Matrikulasi</Link></li>
                         </ul>
                     </div>
 
@@ -35,10 +35,10 @@ export default function Footer() {
                     <div>
                         <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Perusahaan</h4>
                         <ul className="space-y-3">
-                            <li><Link href="/tentang-kami" className="text-white/60 hover:text-accent text-sm transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-accent/50 rounded-full group-hover:bg-accent transition-colors"></span>Tentang Kami</Link></li>
-                            <li><Link href="/portofolio" className="text-white/60 hover:text-accent text-sm transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-accent/50 rounded-full group-hover:bg-accent transition-colors"></span>Portofolio</Link></li>
-                            <li><Link href="/insight" className="text-white/60 hover:text-accent text-sm transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-accent/50 rounded-full group-hover:bg-accent transition-colors"></span>Insight Pendidikan</Link></li>
-                            <li><Link href="/kontak" className="text-white/60 hover:text-accent text-sm transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-accent/50 rounded-full group-hover:bg-accent transition-colors"></span>Kontak</Link></li>
+                            <li><Link href="/tentang-kami" prefetch="hover" cacheFor="30s" className="text-white/60 hover:text-accent text-sm transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-accent/50 rounded-full group-hover:bg-accent transition-colors"></span>Tentang Kami</Link></li>
+                            <li><Link href="/portofolio" prefetch="hover" cacheFor="30s" className="text-white/60 hover:text-accent text-sm transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-accent/50 rounded-full group-hover:bg-accent transition-colors"></span>Portofolio</Link></li>
+                            <li><Link href="/insight" prefetch="hover" cacheFor="30s" className="text-white/60 hover:text-accent text-sm transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-accent/50 rounded-full group-hover:bg-accent transition-colors"></span>Insight Pendidikan</Link></li>
+                            <li><Link href="/kontak" prefetch="hover" cacheFor="30s" className="text-white/60 hover:text-accent text-sm transition-colors duration-300 flex items-center gap-2 group"><span className="w-1 h-1 bg-accent/50 rounded-full group-hover:bg-accent transition-colors"></span>Kontak</Link></li>
                         </ul>
                     </div>
 

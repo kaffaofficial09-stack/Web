@@ -7,8 +7,6 @@ export default function FloatingWhatsApp() {
             rel="noopener noreferrer"
             aria-label="Chat WhatsApp"
         >
-            {/* Ping ring */}
-            <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20"></span>
             <div className="relative bg-[#25D366] text-white w-[56px] h-[56px] rounded-full
                             flex items-center justify-center shadow-lg shadow-[#25D366]/30
                             group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-[#25D366]/40

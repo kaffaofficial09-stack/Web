@@ -17,8 +17,8 @@ export default function Login() {
             <Head title="Admin Login — Kaffah Education Partner" />
             <div className="min-h-screen bg-gradient-to-br from-primary-dark via-primary to-primary-light flex items-center justify-center px-4 relative overflow-hidden">
                 {/* Decorative orbs */}
-                <div className="absolute top-20 right-[10%] w-[400px] h-[400px] bg-accent/10 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-20 left-[5%] w-[300px] h-[300px] bg-white/5 rounded-full blur-3xl"></div>
+                <div className="absolute top-20 right-[10%] w-[400px] h-[400px] bg-accent/10 rounded-full blur-2xl"></div>
+                <div className="absolute bottom-20 left-[5%] w-[300px] h-[300px] bg-white/5 rounded-full blur-2xl"></div>
                 <div className="absolute inset-0 opacity-[0.03]" style={{
                     backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
                     backgroundSize: '32px 32px'

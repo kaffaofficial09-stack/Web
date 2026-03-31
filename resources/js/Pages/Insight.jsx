@@ -46,6 +46,7 @@ export default function Insight({ insights = [] }) {
                                     <img
                                         src={article.image || article.img}
                                         alt={article.title}
+                                        loading="lazy"
                                         className="h-[200px] w-full object-cover group-hover:scale-110 transition-transform duration-700"
                                     />
                                     <div className="absolute top-4 left-4">
@@ -62,7 +63,7 @@ export default function Insight({ insights = [] }) {
                                     </div>
                                     <h3 className="text-lg font-bold text-primary-dark mb-3 leading-snug group-hover:text-accent transition-colors duration-300">{article.title}</h3>
                                     <p className="text-gray-500 text-sm leading-relaxed mb-5">{article.description || article.desc}</p>
-                                    <Link href={article.id ? `/insight/${article.id}` : '#'} className="inline-flex items-center gap-1.5 text-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300">
+                                    <Link href={article.id ? `/insight/${article.id}` : '#'} prefetch="hover" cacheFor="30s" className="inline-flex items-center gap-1.5 text-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300">
                                         Baca Selengkapnya
                                         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
                                     </Link>

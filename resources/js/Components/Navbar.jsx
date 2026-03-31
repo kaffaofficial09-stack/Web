@@ -90,6 +90,8 @@ export default function Navbar() {
                         <Link
                             key={link.href}
                             href={link.href}
+                            prefetch="hover"
+                            cacheFor="30s"
                             className={`
                                 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300
                                 max-md:w-full max-md:px-4 max-md:py-3 max-md:text-base

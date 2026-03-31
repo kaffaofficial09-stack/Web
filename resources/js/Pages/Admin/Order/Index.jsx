@@ -141,6 +141,8 @@ export default function OrderIndex({ orders, statusCounts }) {
                                         <td className="px-6 py-4 text-right">
                                             <Link
                                                 href={`/admin/orders/${order.id}`}
+                                                prefetch="hover"
+                                                cacheFor="15s"
                                                 className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-primary bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors border border-primary/10"
                                             >
                                                 Detail

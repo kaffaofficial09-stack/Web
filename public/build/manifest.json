@@ -1,6 +1,27 @@
 {
+  "_AdminLayout-DQk1w23u.js": {
+    "file": "assets/AdminLayout-DQk1w23u.js",
+    "name": "AdminLayout",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_GuestLayout-gjSBzczL.js": {
+    "file": "assets/GuestLayout-gjSBzczL.js",
+    "name": "GuestLayout",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_PageHeader-0J_B2hgO.js": {
+    "file": "assets/PageHeader-0J_B2hgO.js",
+    "name": "PageHeader",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
   "resources/css/app.css": {
-    "file": "assets/app-De8rg7J_.css",
+    "file": "assets/app-DelsJXCC.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -8,10 +29,227 @@
       "app.css"
     ]
   },
+  "resources/js/Pages/Admin/Dashboard.jsx": {
+    "file": "assets/Dashboard-Dd0S_2LS.js",
+    "name": "Dashboard",
+    "src": "resources/js/Pages/Admin/Dashboard.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AdminLayout-DQk1w23u.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Insight/Form.jsx": {
+    "file": "assets/Form-CLGULaUB.js",
+    "name": "Form",
+    "src": "resources/js/Pages/Admin/Insight/Form.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AdminLayout-DQk1w23u.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Insight/Index.jsx": {
+    "file": "assets/Index-BazjMz8i.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Admin/Insight/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AdminLayout-DQk1w23u.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Login.jsx": {
+    "file": "assets/Login-BeeA3Ihl.js",
+    "name": "Login",
+    "src": "resources/js/Pages/Admin/Login.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/Pages/Admin/Order/Index.jsx": {
+    "file": "assets/Index-Cv9kSNB6.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Admin/Order/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AdminLayout-DQk1w23u.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Order/Show.jsx": {
+    "file": "assets/Show-8APQzZJX.js",
+    "name": "Show",
+    "src": "resources/js/Pages/Admin/Order/Show.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AdminLayout-DQk1w23u.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Portfolio/Form.jsx": {
+    "file": "assets/Form-Cfs7Hp5h.js",
+    "name": "Form",
+    "src": "resources/js/Pages/Admin/Portfolio/Form.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AdminLayout-DQk1w23u.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Portfolio/Index.jsx": {
+    "file": "assets/Index-CFDSJOhm.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Admin/Portfolio/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AdminLayout-DQk1w23u.js"
+    ]
+  },
+  "resources/js/Pages/Admin/Report/Index.jsx": {
+    "file": "assets/Index-DkQNIfIv.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Admin/Report/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_AdminLayout-DQk1w23u.js"
+    ]
+  },
+  "resources/js/Pages/Beranda.jsx": {
+    "file": "assets/Beranda-D2QjjGRI.js",
+    "name": "Beranda",
+    "src": "resources/js/Pages/Beranda.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_GuestLayout-gjSBzczL.js"
+    ]
+  },
+  "resources/js/Pages/BukuModul.jsx": {
+    "file": "assets/BukuModul-6GLz9Wyw.js",
+    "name": "BukuModul",
+    "src": "resources/js/Pages/BukuModul.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_GuestLayout-gjSBzczL.js",
+      "_PageHeader-0J_B2hgO.js"
+    ]
+  },
+  "resources/js/Pages/Insight.jsx": {
+    "file": "assets/Insight-BNk9f_mW.js",
+    "name": "Insight",
+    "src": "resources/js/Pages/Insight.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_GuestLayout-gjSBzczL.js",
+      "_PageHeader-0J_B2hgO.js"
+    ]
+  },
+  "resources/js/Pages/InsightDetail.jsx": {
+    "file": "assets/InsightDetail-8MD3DeK4.js",
+    "name": "InsightDetail",
+    "src": "resources/js/Pages/InsightDetail.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_GuestLayout-gjSBzczL.js",
+      "_PageHeader-0J_B2hgO.js"
+    ]
+  },
+  "resources/js/Pages/Invoice.jsx": {
+    "file": "assets/Invoice-MonljlJ_.js",
+    "name": "Invoice",
+    "src": "resources/js/Pages/Invoice.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/Pages/Kontak.jsx": {
+    "file": "assets/Kontak-BkSHlqZR.js",
+    "name": "Kontak",
+    "src": "resources/js/Pages/Kontak.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_GuestLayout-gjSBzczL.js",
+      "_PageHeader-0J_B2hgO.js"
+    ]
+  },
+  "resources/js/Pages/Portofolio.jsx": {
+    "file": "assets/Portofolio-BWZ41mN6.js",
+    "name": "Portofolio",
+    "src": "resources/js/Pages/Portofolio.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_GuestLayout-gjSBzczL.js",
+      "_PageHeader-0J_B2hgO.js"
+    ]
+  },
+  "resources/js/Pages/PortofolioDetail.jsx": {
+    "file": "assets/PortofolioDetail-CqTR20x9.js",
+    "name": "PortofolioDetail",
+    "src": "resources/js/Pages/PortofolioDetail.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_GuestLayout-gjSBzczL.js",
+      "_PageHeader-0J_B2hgO.js"
+    ]
+  },
+  "resources/js/Pages/ProgramPelatihan.jsx": {
+    "file": "assets/ProgramPelatihan-BRYftyqs.js",
+    "name": "ProgramPelatihan",
+    "src": "resources/js/Pages/ProgramPelatihan.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_GuestLayout-gjSBzczL.js",
+      "_PageHeader-0J_B2hgO.js"
+    ]
+  },
+  "resources/js/Pages/TentangKami.jsx": {
+    "file": "assets/TentangKami-CzEy-zwI.js",
+    "name": "TentangKami",
+    "src": "resources/js/Pages/TentangKami.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_GuestLayout-gjSBzczL.js",
+      "_PageHeader-0J_B2hgO.js"
+    ]
+  },
   "resources/js/app.jsx": {
-    "file": "assets/app-DJylmMLa.js",
+    "file": "assets/app-CVWK7E97.js",
     "name": "app",
     "src": "resources/js/app.jsx",
-    "isEntry": true
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/Admin/Dashboard.jsx",
+      "resources/js/Pages/Admin/Insight/Form.jsx",
+      "resources/js/Pages/Admin/Insight/Index.jsx",
+      "resources/js/Pages/Admin/Login.jsx",
+      "resources/js/Pages/Admin/Order/Index.jsx",
+      "resources/js/Pages/Admin/Order/Show.jsx",
+      "resources/js/Pages/Admin/Portfolio/Form.jsx",
+      "resources/js/Pages/Admin/Portfolio/Index.jsx",
+      "resources/js/Pages/Admin/Report/Index.jsx",
+      "resources/js/Pages/Beranda.jsx",
+      "resources/js/Pages/BukuModul.jsx",
+      "resources/js/Pages/Insight.jsx",
+      "resources/js/Pages/InsightDetail.jsx",
+      "resources/js/Pages/Invoice.jsx",
+      "resources/js/Pages/Kontak.jsx",
+      "resources/js/Pages/Portofolio.jsx",
+      "resources/js/Pages/PortofolioDetail.jsx",
+      "resources/js/Pages/ProgramPelatihan.jsx",
+      "resources/js/Pages/TentangKami.jsx"
+    ]
   }
 }

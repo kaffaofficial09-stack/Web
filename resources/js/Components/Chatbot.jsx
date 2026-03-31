@@ -161,7 +161,6 @@ export default function Chatbot() {
             {/* Toggle Button */}
             <button onClick={() => setIsOpen(!isOpen)}
                 className="group relative cursor-pointer">
-                {!isOpen && <span className="absolute inset-0 rounded-full bg-[#1A3C34] animate-ping opacity-15"></span>}
                 <div className={`relative w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${isOpen
                         ? 'bg-gray-600 hover:bg-gray-700 shadow-gray-400/30'
                         : 'bg-[#1A3C34] hover:scale-110 shadow-[#1A3C34]/30 hover:shadow-xl hover:shadow-[#1A3C34]/40'

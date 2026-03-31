@@ -157,7 +157,7 @@ export default function ProgramPelatihan() {
 
             {/* CTA */}
             <section className="py-20 md:py-24 px-6 bg-gradient-to-br from-primary-dark via-primary to-primary-light text-center relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-3xl"></div>
+                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-2xl"></div>
                 <div className="max-w-[700px] mx-auto relative">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">Dapatkan Analysis Kebutuhan Sekolah Secara Gratis!</h2>
                     <p className="text-white/60 mb-10 text-lg">Tertarik dengan program kami? Hubungi kami untuk konsultasi awal tanpa biaya.</p>

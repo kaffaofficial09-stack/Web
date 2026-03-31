@@ -81,4 +81,19 @@ class AdminOrderController extends Controller
         return redirect()->route('admin.orders.show', $order)
             ->with('success', 'Pembayaran berhasil dicatat.');
     }
+
+    public function destroyPayment(Payment $payment)
+    {
+        $order = $payment->order;
+        $payment->delete();
+
+        // Recalculate payment_status
+        $order->refresh();
+        $order->update([
+            'payment_status' => $order->sisa_tagihan <= 0 ? 'lunas' : 'hutang',
+        ]);
+
+        return redirect()->route('admin.orders.show', $order)
+            ->with('success', 'Pembayaran berhasil dihapus.');
+    }
 }
