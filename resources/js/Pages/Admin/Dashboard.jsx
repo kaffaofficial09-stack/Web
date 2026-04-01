@@ -70,7 +70,7 @@ export default function Dashboard({ insightCount, portfolioCount, orderCount }) 
                         <div>
                             <p className="text-sm font-medium text-gray-400">Website</p>
                             <div className="flex items-center gap-2 mt-2">
-                                <span className="w-2 h-2 bg-emerald-400 rounded-full"></span>
+                                <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
                                 <span className="text-lg font-bold text-gray-800">Online</span>
                             </div>
                         </div>

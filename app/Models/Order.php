@@ -47,6 +47,10 @@ class Order extends Model
 
     public function getTotalPaidAttribute(): int
     {
+        // Use already-loaded relationship to avoid N+1 queries
+        if ($this->relationLoaded('payments')) {
+            return (int) $this->payments->sum('amount');
+        }
         return (int) $this->payments()->sum('amount');
     }
 

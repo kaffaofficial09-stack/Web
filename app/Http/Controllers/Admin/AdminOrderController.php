@@ -12,7 +12,13 @@ class AdminOrderController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Order::withCount('payments')->latest();
+        $query = Order::withSum('payments', 'amount')
+            ->select([
+                'id', 'invoice_number', 'customer_name', 'institution',
+                'subtotal', 'discount_percent', 'shipping_cost',
+                'status', 'payment_status', 'created_at',
+            ])
+            ->latest();
 
         if ($search = $request->get('search')) {
             $query->where(function ($q) use ($search) {
@@ -22,23 +28,23 @@ class AdminOrderController extends Controller
             });
         }
 
-        // Only select fields needed for the list view (not all columns)
-        $orders = $query->select([
-            'id', 'invoice_number', 'customer_name', 'institution',
-            'grand_total', 'status', 'payment_status', 'created_at'
-        ])->get();
+        $orders = $query->get();
 
-        // Use a single optimized query for status counts
-        $statusCounts = Order::selectRaw("
-            COUNT(CASE WHEN status = 'pending' THEN 1 END) as pending,
-            COUNT(CASE WHEN status = 'confirmed' THEN 1 END) as confirmed,
-            COUNT(CASE WHEN status = 'shipped' THEN 1 END) as shipped,
-            COUNT(CASE WHEN status = 'completed' THEN 1 END) as completed,
-            COUNT(CASE WHEN status = 'cancelled' THEN 1 END) as cancelled
-        ")->first();
+        // Single query for all status counts using groupBy
+        $rawCounts = Order::selectRaw("status, COUNT(*) as count")
+            ->groupBy('status')
+            ->pluck('count', 'status');
+
+        $statusCounts = [
+            'pending'   => $rawCounts->get('pending', 0),
+            'confirmed' => $rawCounts->get('confirmed', 0),
+            'shipped'   => $rawCounts->get('shipped', 0),
+            'completed' => $rawCounts->get('completed', 0),
+            'cancelled' => $rawCounts->get('cancelled', 0),
+        ];
 
         return Inertia::render('Admin/Order/Index', [
-            'orders' => $orders,
+            'orders'       => $orders,
             'statusCounts' => $statusCounts,
         ]);
     }
@@ -55,10 +61,10 @@ class AdminOrderController extends Controller
     public function updateStatus(Request $request, Order $order)
     {
         $data = $request->validate([
-            'status' => 'required|in:pending,confirmed,shipped,completed,cancelled',
-            'notes' => 'nullable|string',
+            'status'           => 'required|in:pending,confirmed,shipped,completed,cancelled',
+            'notes'            => 'nullable|string',
             'discount_percent' => 'nullable|integer|min:0|max:100',
-            'shipping_cost' => 'nullable|numeric|min:0',
+            'shipping_cost'    => 'nullable|numeric|min:0',
         ]);
 
         $order->update($data);
@@ -76,8 +82,8 @@ class AdminOrderController extends Controller
 
         $order->payments()->create($data);
 
-        // Auto-update payment_status
-        $order->refresh();
+        // Auto-update payment_status using eager-loaded sum
+        $order->load('payments');
         if ($order->sisa_tagihan <= 0) {
             $order->update(['payment_status' => 'lunas']);
         }
@@ -91,8 +97,8 @@ class AdminOrderController extends Controller
         $order = $payment->order;
         $payment->delete();
 
-        // Recalculate payment_status
-        $order->refresh();
+        // Recalculate payment_status using eager load
+        $order->load('payments');
         $order->update([
             'payment_status' => $order->sisa_tagihan <= 0 ? 'lunas' : 'hutang',
         ]);
