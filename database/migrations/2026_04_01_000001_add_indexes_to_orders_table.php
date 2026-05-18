@@ -10,17 +10,14 @@ return new class extends Migration
     {
         // Add indexes to orders table for frequently queried columns
         Schema::table('orders', function (Blueprint $table) {
-            // Check if index already exists before adding
-            $sm = Schema::getConnection()->getDoctrineSchemaManager();
-            $indexes = array_keys($sm->listTableIndexes('orders'));
-
-            if (!in_array('orders_status_index', $indexes)) {
+            // Use Schema::hasIndex() — available since Laravel 11+ (Doctrine removed in Laravel 13)
+            if (!Schema::hasIndex('orders', 'orders_status_index')) {
                 $table->index('status');
             }
-            if (!in_array('orders_payment_status_index', $indexes)) {
+            if (!Schema::hasIndex('orders', 'orders_payment_status_index')) {
                 $table->index('payment_status');
             }
-            if (!in_array('orders_created_at_index', $indexes)) {
+            if (!Schema::hasIndex('orders', 'orders_created_at_index')) {
                 $table->index('created_at');
             }
         });

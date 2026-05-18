@@ -7,15 +7,15 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
 class AdminSeeder extends Seeder
-{
-    public function run(): void
-    {
-        User::updateOrCreate(
-            ['email' => 'admin@kaffa.com'],
-            [
-                'name' => 'Admin Kaffa',
-                'password' => Hash::make(env('ADMIN_PASSWORD', 'Admin@Kaffa2024!')),
-            ]
-        );
-    }
-}
+        {
+            public function run(): void
+            {
+                User::updateOrCreate(
+                    ['email' => 'admin@kaffa.com'],
+                    [
+                        'name' => 'Admin Kaffa',
+                        'password' => Hash::make(env('ADMIN_PASSWORD', 'Admin@Kaffa2024!')),
+                    ]
+                );
+            }
+        }
